@@ -2,9 +2,7 @@ var path = require('path')
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './build'), //어디에 놓을 것인지 파일명은 기본 bundle.js
-
-    publicPath: '/build/', //정적파일의 경로
+    path: path.resolve(__dirname, './src/build'), //어디에 놓을 것인지 파일명은 기본 bundle.js
 
     filename: 'build.js'
   },
@@ -21,7 +19,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /(node_modules|server)/
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,
