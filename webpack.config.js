@@ -18,8 +18,13 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /(node_modules|server)/
+        exclude: /(node_modules|server.js)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
       },
       {
         test: /\.(png|jpg|gif|svg|ttf|eot|woff|woff2)$/,

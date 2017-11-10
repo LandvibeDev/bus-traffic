@@ -18,12 +18,17 @@
 </template>
 
 <script>
-export default {
-  name: 'card',
-  data () {
-    return {
-      items:[
-        {
+import Vue from 'vue'
+import Component from 'vue-class-component'
+
+@Component({
+  props: {
+    propMessage: String
+  }
+})
+
+export default class card extends Vue{
+  items = [ {
           name: '고수찜닭',
           phone_number: '01012345678',
           img: './assets/p1.jpg',
@@ -34,10 +39,14 @@ export default {
           phone_number: '01012345678',
           img: './assets/p2.jpg',
           description: '맛맛집'
+        },
+        {
+          name: '찌개사랑',
+          phone_number: '01012345678',
+          img: './assets/p2.jpg',
+          description: '맛맛맛집'
         }
-      ]
-    }
-  }
+        ];
 }
 </script>
 

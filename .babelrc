@@ -3,5 +3,10 @@
       ["env", {"modules":false}],
       "stage-2"
     ],
+    "comments": false,
+    "plugins": [
+      "transform-decorators-legacy",
+      "transform-class-properties"
+    ],
     "comments": false
   }
