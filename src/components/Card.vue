@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col s12 m6 l3" v-for="item in items" :key="item">
-      <div class="card">
+      <div class="card" v-on:click="clickCard">
         <div class="card-image">
           <img :src="item.img">
           <span class="card-title">{{ item.name }}</span>
@@ -47,6 +47,9 @@ export default class card extends Vue{
           description: '맛맛맛집'
         }
         ];
+  clickCard(){
+    alert('click');
+  }
 }
 </script>
 
