@@ -28,6 +28,7 @@ import Component from 'vue-class-component'
 })
 
 export default class card extends Vue{
+  
   items = [ {
           name: '고수찜닭',
           phone_number: '01012345678',
@@ -48,7 +49,6 @@ export default class card extends Vue{
         }
         ];
   clickCard(){
-    alert('click');
   }
 }
 </script>
