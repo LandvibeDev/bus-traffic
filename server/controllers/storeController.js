@@ -15,7 +15,6 @@ exports.list_all_stores = function(req, res) {
     if (err)
       res.send(err);
     res.json(store);
-    
   });
 };
 

@@ -1,6 +1,7 @@
 <template>
   <div class="row">
     <div class="col s12 m6 l3" v-for="item in items" :key="item">
+      <button v-on:click="click"></button>
       <div class="card" v-on:click="clickCard">
         <div class="card-image">
           <img :src="item.img">
@@ -20,6 +21,7 @@
 <script>
 import Vue from 'vue'
 import Component from 'vue-class-component'
+import axios from 'axios'
 
 @Component({
   props: {
@@ -47,8 +49,28 @@ export default class card extends Vue{
           img: './assets/p2.jpg',
           description: '맛맛맛집'
         }
-        ];
-  clickCard(){
+  ];
+
+  clickCard() {
+    console.log('axios');
+    axios.get('http://localhost:3000/stores')
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    console.log('axiosed');
+  }
+
+  click(){
+    axios.post('http://localhost:3000/stores')
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 }
 </script>

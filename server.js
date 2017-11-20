@@ -32,3 +32,18 @@ routes(app); //register the route
 app.listen(port);
 
 console.log('inharo started on: ' + port);
+
+var gozzim = new Store({
+    name: '고수찜닭',
+    phone_number: '01012345678',
+    img: './assets/p1.jpg',
+    description: '맛집'
+  }
+);
+gozzim.save(function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('ok!');
+  }
+});
